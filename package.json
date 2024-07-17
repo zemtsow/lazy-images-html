@@ -1,0 +1,16 @@
+{
+  "name": "lazy-images",
+  "version": "0.0.1",
+  "description": "Image lazy loading for native HTML",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "lazy-load",
+    "images",
+    "lazy-load-images"
+  ],
+  "author": "zemtsow",
+  "license": "ISC"
+}

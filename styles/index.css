@@ -1,0 +1,30 @@
+@import url("./animation/index.css");
+@import url("./library/index.css");
+:root {
+  --font-global: "Courier New", Courier, monospace;
+}
+
+.modal__view {
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgb(197, 197, 197);
+  position: fixed;
+  font-family: var(--font-global);
+  padding: 2em;
+  transition-duration: 0.3s;
+  background-color: rgba(255, 255, 255, 0.61);
+  animation: showModal 1s forwards;
+}
+.modal__view span {
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  color: rgb(0, 0, 0);
+}
+
+.modal__hide {
+  transition-duration: 1s;
+  animation: hideModal 3s forwards;
+}/*# sourceMappingURL=index.css.map */

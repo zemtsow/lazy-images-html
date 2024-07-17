@@ -1,0 +1,22 @@
+@keyframes showModal {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 2em;
+    left: 2em;
+  }
+}
+
+@keyframes hideModal {
+  0% {
+    top: 2em;
+    left: 2em;
+  }
+  100% {
+    top: 2em;
+    left: -100%;
+    opacity: 0;
+  }
+
+}
