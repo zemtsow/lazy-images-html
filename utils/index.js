@@ -1,3 +1,29 @@
+const lazy = document.querySelectorAll('#lazy')
+const images = document.querySelectorAll('img')
+
+/**
+ * @property {NodeListOf<HTMLImageElement>} entities
+ */
+
+/**
+ * @param {LazyLoadAlgorithm} options - Function for detect lazy tags
+ */
+
+const lazyLoadAlgorithm = ({ entities }) => {
+  for (let i = 0; i < entities.length; i++) {
+    entities[i].classList.add("blur__image")
+    const loadData = setInterval(() => {
+      if (entities[i].loading) {
+        console.log("loading",);
+      }
+      if (entities[i].complete) {
+        entities[i].classList.remove("blur__image")
+        console.log("loaded",);
+        clearInterval(loadData)
+      }
+    }, 100)
+  }
+};
 
 
 /**
@@ -7,7 +33,7 @@
  */
 
 /**
- * @param {ShowModalWindowParams} HTMLElement
+ * @param {ShowModalWindowParams} options - For showing modal on debug
  */
 
 const showModalWindow = ({ message, debug }) => {
@@ -30,6 +56,31 @@ const showModalWindow = ({ message, debug }) => {
   return
 };
 
+/**
+ * @typedef {Object} DetectLazyTags
+ * @property {boolean} debug
+ */
+
+/**
+ * @param {DetectLazyTags} options - Function for detect lazy tags
+ */
+
+const detectLazyTags = ({ debug }) => {
+  if (lazy.length !== 0) {
+    showModalWindow({
+      message: `Yay we detected ${lazy.length} lazy :)`,
+      debug: debug
+    })
+    return lazyLoadAlgorithm({ entities: images })
+  } else {
+    return showModalWindow({
+      message: `Lazy Images: Please enter some 1 lazy`,
+      debug: debug
+    })
+  }
+}
+
 export {
-  showModalWindow
+  showModalWindow,
+  detectLazyTags
 }

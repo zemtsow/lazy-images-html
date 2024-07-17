@@ -5,6 +5,14 @@ declare global {
     debug: boolean
   }
 
+  interface DetectLazyTags {
+    debug: boolean
+  }
+
+  interface LazyLoadAlgorithm {
+    entities: NodeListOf<HTMLImageElement>
+  }
+
   function showModalWindow(params: ShowModalWindowParams): string;
 }
 
